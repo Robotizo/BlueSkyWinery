@@ -9,6 +9,7 @@ import path from 'path';
 
 dotenv.config();
 
+
 const app = express();
 
 // const stripe = require("stripe")("sk_test_51IplL2C37SytJ6awuAIVFongzAgy6cL1RhXQFRDwKGWL5LFgjUI0SZdvucdKAgzmQyxvCcyLYd9L3ZxUzYs4G7ZM00JeKUNaxX");
