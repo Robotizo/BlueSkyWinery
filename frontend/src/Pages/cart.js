@@ -181,7 +181,7 @@ export default function Cart() {
                         Products total
                     </Text>
                     <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                        ${cartItems.reduce((a, c) => a + c.qty, 0)}
+                    ${(cartItems.reduce((a, c) => (a + c.price * c.qty), 0)).toFixed(2)}
                         
                     </Text>
 
@@ -192,17 +192,17 @@ export default function Cart() {
                             GST (5%)
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                            $21.59
+                        ${(cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.05), 0)).toFixed(2)}
                         </Text>
 
                     </Grid>
                     <Grid templateColumns={[ "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(2, 1fr)"]} >
 
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" >
-                            PST (7%)
+                            PST (10%)
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                            $30.23
+                            ${(cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.1), 0)).toFixed(2)}
                         </Text>
 
                     </Grid>
@@ -215,24 +215,12 @@ export default function Cart() {
                             Total
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                        ${(cartItems.reduce((a, c) => (a + c.price * c.qty), 0)).toFixed(2)}
+                        ${(cartItems.reduce((a, c) => ((a + c.price * c.qty) + (a + c.price * c.qty * 0.05) + + (a + c.price * c.qty * 0.1)), 0)).toFixed(2)}
                         </Text>
 
                     </Grid>
 
-                    <hr/>
-
-
-                    <Grid templateColumns={[ "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(2, 1fr)"]} >
-
-                        <Text px={5} py={2} fontWeight="600" fontSize="16px" >
-                            Card Number
-                        </Text>
-                        <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                            Ending with 3892
-                        </Text>
-
-                    </Grid>
+        
 
                     <hr/>
 

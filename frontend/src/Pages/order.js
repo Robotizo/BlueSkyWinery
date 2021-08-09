@@ -224,7 +224,7 @@ const CheckoutForm = (props) => {
                    <Grid templateColumns={[ "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)", "repeat(2, 1fr)"]} >
 
                        <Text px={5} py={2} fontWeight="600" fontSize="16px" >
-                           PST (7%)
+                           PST (10%)
                        </Text>
                        <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
                            ${props.cart.taxPricePST.toFixed(2)}
@@ -315,7 +315,7 @@ export default function Order(){
     cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
 
     cart.taxPriceGST = toPrice(0.05 * cart.itemsPrice);
-    cart.taxPricePST = toPrice(0.07 * cart.itemsPrice);
+    cart.taxPricePST = toPrice(0.1 * cart.itemsPrice);
 
     cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPricePST + cart.taxPriceGST;
 
