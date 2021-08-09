@@ -99,7 +99,7 @@ function ImageCollection(){
     const [videoloaded, setVideoloaded] = useState(false);
     return(
         <>
-        <Grid templateColumns={[ "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)"]} gap={10}>
+        {/* <Grid templateColumns={[ "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)"]} gap={10}>
             <Box bg="black" w="100%" h="422px" >
             {videoloaded ? null : 
 
@@ -114,9 +114,9 @@ function ImageCollection(){
                 </Skeleton>
                 }
 
-                {/* <video width="52%" style={videoloaded ? {height: "422px", width: "100%",  opacity: "0.5", objectFit: "cover"} : { display: 'none' }} ptonLoadedDataCaure={() => (setVideoloaded(true), console.log('Video Done!'))} autoPlay loop muted >
+                <video width="52%" style={videoloaded ? {height: "422px", width: "100%",  opacity: "0.5", objectFit: "cover"} : { display: 'none' }} ptonLoadedDataCaure={() => (setVideoloaded(true), console.log('Video Done!'))} autoPlay loop muted >
                     <source src="https://compilelabs.s3.ca-central-1.amazonaws.com/blue-sky-winery/wine-membership.mp4"  type="video/mp4" />
-                </video> */}
+                </video>
                 <Image src="https://images.pexels.com/photos/3756623/pexels-photo-3756623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=800" w="100%" h="422px" opacity="0.5" objectFit="cover"  style={videoloaded ? {height: "422px", width: "100%",  opacity: "0.5", objectFit: "cover"} : { display: 'none' }} onLoad={() => (setVideoloaded(true), console.log('Video Done!'))} />
                 <Text
                 position="relative" 
@@ -169,7 +169,7 @@ function ImageCollection(){
                 bg={"#313131"}
                 _hover={{ bg: "black" }}>View Now</Button>
             </Box>
-        </Grid>
+        </Grid> */}
         <Grid templateColumns="repeat(1, 1fr)" mt={10}>
             <Box bg="black" w="100%" h={["422px", "422px","422px", "272px"]} >
                 <Image src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1200&q=80" w="100%" h={["422px", "422px","422px", "272px"]} opacity="0.5" objectFit="cover" />
@@ -207,7 +207,7 @@ function Awards(){
         <> 
             <Box bg="#F2F0EC" w="100%" color="white" mt={24} mb={24} > 
             <Grid templateColumns={[ "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)"]} w="100%" >
-                <Image w="100%" h={"580px"} objectFit="cover" float="left" src="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                <Image w="100%" h={"580px"} objectFit="cover" float="left" src="https://d1q3ne4l9f3g5t.cloudfront.net/blue-sky-winery/wines/2014%20BLUE%20LIGHTNING%20FRONT.jpg" />
                 <Box w="100%" h="100%" p={[8, 8, 8, 28]} color="black" float="right">
         
                     <Text fontFamily={"EB Garamond"}  fontWeight={600} fontSize={[25, 25, 25,35]}>

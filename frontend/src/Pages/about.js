@@ -90,7 +90,8 @@ function Profiles(){
                 </Box>
                 
                 <Box bg="#F2F0EC" w="100%" h={["auto","auto","auto","728px"]} color="white"  mb={24}> 
-                    <Image w="100%" h={"326px"} objectFit="cover" src="https://compilelabs.s3.ca-central-1.amazonaws.com/blue-sky-winery/dsc03228.jpg" />
+                
+                    <Image w="100%" h={"326px"} objectFit="cover" src="https://d1q3ne4l9f3g5t.cloudfront.net/blue-sky-winery/mom pouring wine.jpg" />
                     <Box p={[8, 8, 8, 10]} >
                                              
                         <Text  fontWeight={900} color={"#0096D8"} fontSize={["14px","14px","14px","16px"]}>
