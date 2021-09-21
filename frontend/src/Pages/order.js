@@ -8,6 +8,7 @@ import { ORDER_CREATE_RESET } from '../Constants/orderConstants';
 import {Elements, CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 
 

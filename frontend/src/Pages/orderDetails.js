@@ -4,7 +4,7 @@ import { Image, Box, Text, Grid, AlertIcon, Spinner, Container, Alert } from "@c
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { detailsOrder } from '../Actions/orderActions';
-import emailjs from 'emailjs-com';
+
 
 
 
