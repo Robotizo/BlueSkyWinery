@@ -86,10 +86,13 @@ const CheckoutForm = (props) => {
             setLoading(false);
           } else {
             props.placeOrderHandler();
-            
+
             emailjs.send('service_64844wj', 'template_1fj3xbo', {
-                to_name: "wiserobotizo@gmail.com",
-                customer_email: "wiserobotizo@gmail.com",
+                cust_name: props.cart.shippingInfo.fullName,
+                cust_email: props.cart.shippingInfo.email,
+                city: props.cart.shippingInfo.city,
+                address: props.cart.shippingInfo.address,
+                postal_code: props.cart.shippingInfo.postalCode,
                 message: "hi"
             }, 
             'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
