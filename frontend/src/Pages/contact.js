@@ -1,5 +1,6 @@
 import  React, {useState} from "react";
 import { Image, Container, Text, Box, Grid, Input, GridItem, Textarea, Button, useToast} from "@chakra-ui/react";
+import emailjs from 'emailjs-com';
 
 
 
