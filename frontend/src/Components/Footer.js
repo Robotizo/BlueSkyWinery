@@ -77,16 +77,7 @@ export default function Footer(){
                                 <Box/>
                                 <Box>
                                     <Grid templateColumns="repeat(3, 1fr)" color="white" float="right" gap={6}>
-                                        <Text>
-                                            hi
-                                        </Text>
-                                        <Text>
-                                            hi
-                                        </Text>
-                                        <Text>
-                                            hi
-                                        </Text>
-                                        
+                     
                                     </Grid>
                                 </Box>
 

@@ -374,7 +374,7 @@ export default function Order(){
         }
     }, [success, dispatch, order, history])
 
-    const stripePromise = loadStripe('pk_test_51IplL2C37SytJ6awMwFV7Ma0qNozptKRbpg7etmGtC7PDgLt7ABJk5tguYG6mdwBYgFfU9PFq6vMLoeVvcSSGKlu00aFniZqE9');
+    const stripePromise = loadStripe('pk_live_51IplL2C37SytJ6awtOL0z7sPKgtKib4PGwBSxVYvRMoKQeoC4KmmMDXbHOGicx81Lki1RewRR8yDQjAR2gsScBLI00pdBRKDub');
 
 
     return(

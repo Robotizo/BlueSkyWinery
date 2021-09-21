@@ -15,7 +15,7 @@ const app = express();
 // const stripe = require("stripe")("sk_test_51IplL2C37SytJ6awuAIVFongzAgy6cL1RhXQFRDwKGWL5LFgjUI0SZdvucdKAgzmQyxvCcyLYd9L3ZxUzYs4G7ZM00JeKUNaxX");
 
 
-const stripe = new Stripe("sk_test_51IplL2C37SytJ6awuAIVFongzAgy6cL1RhXQFRDwKGWL5LFgjUI0SZdvucdKAgzmQyxvCcyLYd9L3ZxUzYs4G7ZM00JeKUNaxX");
+const stripe = new Stripe("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");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
