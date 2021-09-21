@@ -87,17 +87,7 @@ const CheckoutForm = (props) => {
           } else {
             props.placeOrderHandler();
 
-            emailjs.send('service_64844wj', 'template_1fj3xbo', {
-                cust_name: props.cart.shippingInfo.fullName,
-                cust_email: props.cart.shippingInfo.email,
-                city: props.cart.shippingInfo.city,
-                address: props.cart.shippingInfo.address,
-                postal_code: props.cart.shippingInfo.postalCode,
-                message: "hi"
-            }, 
-            'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
-              console.log(res, 'Email successfully sent!')
-            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
+ 
 
 
 
@@ -355,6 +345,17 @@ export default function Order(){
 
         if(success){
             // stripeScript();
+            emailjs.send('service_64844wj', 'template_1fj3xbo', {
+                cust_name: cart.shippingInfo.fullName,
+                cust_email: cart.shippingInfo.email,
+                city: cart.shippingInfo.city,
+                address: cart.shippingInfo.address,
+                postal_code: cart.shippingInfo.postalCode,
+                order_list: cart.cartItems
+            }, 
+            'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
+              console.log(res, 'Email successfully sent!')
+            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
             history.push(`/orderConfirmed/${order._id}`);
             dispatch({type: ORDER_CREATE_RESET});
         }
