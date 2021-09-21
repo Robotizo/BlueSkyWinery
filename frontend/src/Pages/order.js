@@ -8,6 +8,7 @@ import { ORDER_CREATE_RESET } from '../Constants/orderConstants';
 import {Elements, CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 
 function NavArea(){
@@ -85,6 +86,18 @@ const CheckoutForm = (props) => {
             setLoading(false);
           } else {
             props.placeOrderHandler();
+            
+            emailjs.send('service_64844wj', 'template_1fj3xbo', {
+                to_name: "wiserobotizo@gmail.com",
+                customer_email: "wiserobotizo@gmail.com",
+                message: "hi"
+            }, 
+            'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
+              console.log(res, 'Email successfully sent!')
+            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
+
+
+
             setLoading(false);
        
             toast({
