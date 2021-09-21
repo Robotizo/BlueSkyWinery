@@ -354,7 +354,7 @@ export default function Order(){
         if(success){
             // stripeScript();
             printResult = cart.cartItems.map(item => {
-                return ["Wine Name:" + item.name, "Quantity:" + item.qty]
+                return ["Wine Name: " + item.name, "Quantity: " + item.qty, "  "]
             });
   
             emailjs.send('service_64844wj', 'template_1fj3xbo', {
