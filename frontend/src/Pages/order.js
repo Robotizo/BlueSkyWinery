@@ -345,7 +345,17 @@ export default function Order(){
 
         if(success){
             // stripeScript();
-         
+            emailjs.send('service_64844wj', 'template_1fj3xbo', {
+                cust_name: order.shippingInfo.fullName,
+                cust_email: order.shippingInfo.email,
+                city: order.shippingInfo.city,
+                address: order.shippingInfo.address,
+                postal_code: order.shippingInfo.postalCode,
+                order_list: "news"
+            }, 
+            'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
+              console.log(res, 'Email successfully sent!')
+            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
             history.push(`/orderConfirmed/${order._id}`);
             dispatch({type: ORDER_CREATE_RESET});
         }
