@@ -50,13 +50,13 @@ export default function OrderDetail(props){
         
         dispatch(detailsOrder(orderId));
         emailjs.send('service_64844wj', 'template_1fj3xbo', {
-            order_id: order._id,
+            order_id: orderId,
             cust_name: order.shippingInfo.fullName,
             cust_email: order.shippingInfo.email,
             city: order.shippingInfo.city,
             address: order.shippingInfo.address,
             postal_code: order.shippingInfo.postalCode,
-            order_list: order.cartItems.toJson()
+            order_list: "news"
         }, 
         'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
           console.log(res, 'Email successfully sent!')
