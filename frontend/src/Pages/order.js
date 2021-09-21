@@ -356,7 +356,7 @@ export default function Order(){
             printResult = cart.cartItems.map(item => {
                 return [item.name, item.qty]
             });
-            console.log(printResult);
+  
             emailjs.send('service_64844wj', 'template_1fj3xbo', {
                 order_id: order._id,
                 cust_name: cart.shippingInfo.fullName,
@@ -364,7 +364,7 @@ export default function Order(){
                 city: cart.shippingInfo.city,
                 address: cart.shippingInfo.address,
                 postal_code: cart.shippingInfo.postalCode,
-                order_list: cart.cartItems.for
+                order_list: printResult.toString()
             }, 
             'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
               console.log(res, 'Email successfully sent!')
