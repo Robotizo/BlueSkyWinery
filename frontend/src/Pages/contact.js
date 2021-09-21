@@ -64,12 +64,12 @@ function FirstArea(){
         setLoading(true)
 
 
-        // await emailjs.send('innovate_ph', 'template_rr8qcxn', {from_email: values.email, from_name: values.fullName, from_phone: values.phone, from_message: values.message, from_type: values.type, from_company: values.company}, 'user_75Bsee9ECUBAtheNEzbIL')
-        // .then((result) => {
-        //     console.log('Email Sent!');
-        // }, (error) => {
-        //     console.log(error.text);
-        // });
+        await emailjs.send('service_64844wj', 'template_6d9b60g', {from_email: values.email, from_name: values.fullName, from_phone: values.phone, from_message: values.message}, 'user_mEuPE9kyrhUNYGzDFWI0c')
+        .then((result) => {
+            console.log('Email Sent!');
+        }, (error) => {
+            console.log(error.text);
+        });
         
 
 
