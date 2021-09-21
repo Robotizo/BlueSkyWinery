@@ -309,14 +309,18 @@ export default function Order(){
 
     const history = useHistory();
     const cart = useSelector(state => state.cart);
+    const printResult = [];
+
     // if(!cart.shippingInfo.address){
     //     history.push('/shipping');
     // }
     const orderCreate = useSelector((state) => state.orderCreate);
     const {loading, success, error, order} = orderCreate;
     const toPrice = (num) => Number(num.toFixed(2));
+
     const [clientSecret, setClientSecret] = useState('');
     cart.itemsPrice = toPrice(cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0));
+
 
 
     cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
@@ -344,8 +348,15 @@ export default function Order(){
             // console.log(data.data.clientSecret);
           });
 
+         
+
+
         if(success){
             // stripeScript();
+            printResult = cart.cartItems.map(item => {
+                return [item.name, item.qty]
+            });
+            console.log(printResult);
             emailjs.send('service_64844wj', 'template_1fj3xbo', {
                 order_id: order._id,
                 cust_name: cart.shippingInfo.fullName,
@@ -353,7 +364,7 @@ export default function Order(){
                 city: cart.shippingInfo.city,
                 address: cart.shippingInfo.address,
                 postal_code: cart.shippingInfo.postalCode,
-                order_list: cart.cartItems[0].name
+                order_list: cart.cartItems.for
             }, 
             'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
               console.log(res, 'Email successfully sent!')
