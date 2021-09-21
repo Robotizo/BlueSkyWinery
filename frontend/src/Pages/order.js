@@ -309,7 +309,7 @@ export default function Order(){
 
     const history = useHistory();
     const cart = useSelector(state => state.cart);
-    const printResult = [];
+    let printResult = [];
 
     // if(!cart.shippingInfo.address){
     //     history.push('/shipping');
