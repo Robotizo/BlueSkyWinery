@@ -8,7 +8,7 @@ import { ORDER_CREATE_RESET } from '../Constants/orderConstants';
 import {Elements, CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import axios from 'axios';
-import emailjs from 'emailjs-com';
+
 
 
 function NavArea(){
@@ -345,17 +345,7 @@ export default function Order(){
 
         if(success){
             // stripeScript();
-            emailjs.send('service_64844wj', 'template_1fj3xbo', {
-                cust_name: cart.shippingInfo.fullName,
-                cust_email: cart.shippingInfo.email,
-                city: cart.shippingInfo.city,
-                address: cart.shippingInfo.address,
-                postal_code: cart.shippingInfo.postalCode,
-                order_list: cart.cartItems
-            }, 
-            'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
-              console.log(res, 'Email successfully sent!')
-            }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
+         
             history.push(`/orderConfirmed/${order._id}`);
             dispatch({type: ORDER_CREATE_RESET});
         }

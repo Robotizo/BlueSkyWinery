@@ -4,6 +4,7 @@ import { Image, Box, Text, Grid, AlertIcon, Spinner, Container, Alert } from "@c
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { detailsOrder } from '../Actions/orderActions';
+import emailjs from 'emailjs-com';
 
 
 
@@ -48,6 +49,18 @@ export default function OrderDetail(props){
     useEffect(() => {
         
         dispatch(detailsOrder(orderId));
+        emailjs.send('service_64844wj', 'template_1fj3xbo', {
+            order_id: order._id,
+            cust_name: order.shippingInfo.fullName,
+            cust_email: order.shippingInfo.email,
+            city: order.shippingInfo.city,
+            address: order.shippingInfo.address,
+            postal_code: order.shippingInfo.postalCode,
+            order_list: order.cartItems.toJson()
+        }, 
+        'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
+          console.log(res, 'Email successfully sent!')
+        }).catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err));
 
     }, [dispatch, orderId])
 
