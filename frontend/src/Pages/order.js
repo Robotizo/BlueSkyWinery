@@ -353,7 +353,7 @@ export default function Order(){
                 city: cart.shippingInfo.city,
                 address: cart.shippingInfo.address,
                 postal_code: cart.shippingInfo.postalCode,
-                order_list: cart.cartItems[0]
+                order_list: cart.cartItems[0].name
             }, 
             'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
               console.log(res, 'Email successfully sent!')
