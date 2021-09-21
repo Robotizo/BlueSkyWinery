@@ -347,12 +347,13 @@ export default function Order(){
         if(success){
             // stripeScript();
             emailjs.send('service_64844wj', 'template_1fj3xbo', {
-                cust_name: order.shippingInfo.fullName,
-                cust_email: order.shippingInfo.email,
-                city: order.shippingInfo.city,
-                address: order.shippingInfo.address,
-                postal_code: order.shippingInfo.postalCode,
-                order_list: "news"
+                order_id: order._id,
+                cust_name: cart.shippingInfo.fullName,
+                cust_email: cart.shippingInfo.email,
+                city: cart.shippingInfo.city,
+                address: cart.shippingInfo.address,
+                postal_code: cart.shippingInfo.postalCode,
+                order_list: cart.cartItems[0]
             }, 
             'user_mEuPE9kyrhUNYGzDFWI0c') .then(res => {
               console.log(res, 'Email successfully sent!')
