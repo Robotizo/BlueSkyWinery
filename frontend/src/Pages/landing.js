@@ -1,6 +1,7 @@
 import  React, {useState} from "react";
 import { Image, Container, Text, Box, Grid, Button, Skeleton } from "@chakra-ui/react";
 import {useSpring, animated} from 'react-spring';
+import { Link } from "react-router-dom";
 
 
 
@@ -170,7 +171,9 @@ function ImageCollection(){
                 _hover={{ bg: "black" }}>View Now</Button>
             </Box>
         </Grid> */}
+
         <Grid templateColumns="repeat(1, 1fr)" mt={10}>
+            <Link to='/shop'>
             <Box bg="black" w="100%" h={["422px", "422px","422px", "272px"]} >
                 <Image src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1200&q=80" w="100%" h={["422px", "422px","422px", "272px"]} opacity="0.5" objectFit="cover" />
                 <Text
@@ -197,6 +200,7 @@ function ImageCollection(){
                 bg={"#313131"}
                 _hover={{ bg: "black" }}>View Now</Button>
             </Box>
+            </Link>
         </Grid>
         </>
     )
