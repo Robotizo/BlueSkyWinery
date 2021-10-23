@@ -215,7 +215,7 @@ export default function Cart() {
                             Total
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                        ${(cartItems.reduce((a, c) => ((a + c.price * c.qty) + (a + c.price * c.qty * 0.05) +  (a + c.price * c.qty * 0.1)), 0)).toFixed(2)}
+                        ${(cartItems.reduce((a, c) => ((a + c.price * c.qty) + ((a + c.price * c.qty) * 0.05) +  ((a + c.price * c.qty) * 0.1)), 0)).toFixed(2)}
                         </Text>
 
                     </Grid>
