@@ -51,7 +51,7 @@ export default function Cart() {
     var itemPrice = (cartItems.reduce((a, c) => (a + c.price * c.qty), 0)).toFixed(2);
     var taxGST = (cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.05), 0)).toFixed(2);
     var taxPST = (cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.1), 0)).toFixed(2);
-    var totalPrice = itemPrice + taxGST + taxPST;
+    var totalPrice = Number(itemPrice) + Number(taxGST)+ Number(taxPST);
  
 
 
@@ -220,7 +220,7 @@ export default function Cart() {
                             Total
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                        ${totalPrice.toFixed(2)}
+                        ${totalPrice}
                         </Text>
 
                     </Grid>

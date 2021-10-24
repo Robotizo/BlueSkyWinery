@@ -125,6 +125,7 @@ function Wines(){
 
     useEffect(() => {
         dispatch(listWines());
+        window.scrollTo(0, 0);
     }, [dispatch]);
 
 
