@@ -220,7 +220,7 @@ export default function Cart() {
                             Total
                         </Text>
                         <Text px={5} py={2} fontWeight="600" fontSize="16px" textAlign="right" >
-                        ${totalPrice}
+                        ${totalPrice.toFixed(2)}
                         </Text>
 
                     </Grid>
