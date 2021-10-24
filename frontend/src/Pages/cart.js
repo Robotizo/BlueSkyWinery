@@ -51,7 +51,7 @@ export default function Cart() {
     var itemPrice = (cartItems.reduce((a, c) => (a + c.price * c.qty), 0)).toFixed(2);
     var taxGST = (cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.05), 0)).toFixed(2);
     var taxPST = (cartItems.reduce((a, c) => ((a + c.price * c.qty) * 0.1), 0)).toFixed(2);
-    var totalPrice = toPrice(itemPrice + taxGST + taxPST);
+    var totalPrice = itemPrice + 2;
  
 
 
